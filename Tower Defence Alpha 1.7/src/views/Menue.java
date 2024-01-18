@@ -215,6 +215,17 @@ public class Menue {
 		main.text("Monnaie : ",860,740);
 		main.text(" " + game.monnaie, 930,740);
 		main.noStroke();
+		main.text("Mode : ",860,790);
+		String niveau = "";
+		if(game.level == 1){
+			niveau = "Débutant";
+		} else if (game.level == 2){
+			niveau = "Intermédiaire";
+		} else if (game.level == 3){
+			niveau = "Expert";
+		}
+		main.text(" " + niveau, 910,790);
+		main.noStroke();
 	}
 	void buildingEnd(){
 		//System.out.println(building);

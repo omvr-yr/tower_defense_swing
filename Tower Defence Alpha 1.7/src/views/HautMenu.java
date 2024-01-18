@@ -71,6 +71,20 @@ public class HautMenu {
 
 		main.textSize(20);
 		main.text("POOIG Project by Omar & Sami", 70, 800);
+
+		String niveau = "";
+		if(level == 1){
+			niveau = "Débutant";
+		} else if (level == 2){
+			niveau = "Intermédiaire";
+		} else if (level == 3){
+			niveau = "Expert";
+		} else {
+			niveau = "aucun";
+		}
+
+		main.textSize(20);
+		main.text("Niveau selectionné : " + niveau, 780, 800);
 	}
 
 	void mainMenueWeiter() {
