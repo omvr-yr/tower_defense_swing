@@ -10,15 +10,15 @@ public class Wave {
 	
 	Main main;
 	Game game;	
-	ArrayList<int[]> gegenerGruppen;
+	ArrayList<int[]> gegenergroupe;
 	int offsetTime;
 	int waveTimer = 0;
-	int gruppenTimer = 0;
+	int groupeTimer = 0;
 	int aktiveGruppeIndex = 0;
 
-	public Wave(Main ma, ArrayList<int[]> gruppenList, int offset) {
+	public Wave(Main ma, ArrayList<int[]> groupeList, int offset) {
 		main = ma;
-		gegenerGruppen = gruppenList;
+		gegenergroupe = groupeList;
 		offsetTime = offset;
 		game = main.game();
 	}
@@ -46,17 +46,17 @@ public class Wave {
 		try {
 			if(waveTimer > game.waveOffsetTime) {
 			
-				int[] gruppe = gegenerGruppen.get(aktiveGruppeIndex);
+				int[] gruppe = gegenergroupe.get(aktiveGruppeIndex);
 			
-				if(gruppenTimer > gruppe[3]) {
+				if(groupeTimer > gruppe[3]) {
 					neueWelle(gruppe[0], gruppe[1], gruppe[2]);
-					gruppenTimer = 0;
-					if(aktiveGruppeIndex >= gegenerGruppen.size() - 1) {
+					groupeTimer = 0;
+					if(aktiveGruppeIndex >= gegenergroupe.size() - 1) {
 						game.actuellewave = game.waves.get(game.waves.indexOf(game.actuellewave) + 1);
 						
 					} else {aktiveGruppeIndex ++;}
 			
-				} else {gruppenTimer ++;}
+				} else {groupeTimer ++;}
 			
 			}	else {waveTimer ++;}
 		

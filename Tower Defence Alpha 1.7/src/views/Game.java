@@ -146,16 +146,16 @@ public class Game {
 		// type d'ennemis / longeur de la vague / délai entre les ennemis / temps d'attente intial
 		if(level == 1){ 
  			
-			ArrayList<int[]> gruppen = new ArrayList<>();
-			int[] gruppe1 = {1, 20, 70, 0};			gruppen.add(gruppe1);
-			int[] gruppe2 = {1, 20, 50, 1000};		gruppen.add(gruppe2);
-			Wave w1 = new Wave(main, gruppen, 4000);
+			ArrayList<int[]> groupe = new ArrayList<>();
+			int[] gruppe1 = {1, 20, 70, 0};			groupe.add(gruppe1);
+			int[] gruppe2 = {1, 20, 50, 1000};		groupe.add(gruppe2);
+			Wave w1 = new Wave(main, groupe, 4000);
 			
-			ArrayList<int[]> gruppen2 = new ArrayList<>();
-			int[] gruppe12 = {2, 5, 60, 1000};		gruppen2.add(gruppe12);
-			int[] gruppe22 = {1, 10, 60, 600};		gruppen2.add(gruppe22);
-			int[] gruppe32 = {2, 20, 50, 800};		gruppen2.add(gruppe32);	
-			Wave w2 = new Wave(main, gruppen2, 100);
+			ArrayList<int[]> groupe2 = new ArrayList<>();
+			int[] gruppe12 = {2, 5, 60, 1000};		groupe2.add(gruppe12);
+			int[] gruppe22 = {1, 10, 60, 600};		groupe2.add(gruppe22);
+			int[] gruppe32 = {2, 20, 50, 800};		groupe2.add(gruppe32);	
+			Wave w2 = new Wave(main, groupe2, 100);
 			
 			
 			waves.add(w1);
@@ -166,16 +166,16 @@ public class Game {
 		// type d'ennemis / longeur de la vague / délai entre les ennemis / temps d'attente intial
 		else if(level == 2){ 
  			monnaie -= 200;
-			ArrayList<int[]> gruppen = new ArrayList<>();
-			int[] gruppe1 = {2, 30, 40, 0};			gruppen.add(gruppe1);
-			int[] gruppe2 = {1, 30, 50, 1000};		gruppen.add(gruppe2);
-			Wave w1 = new Wave(main, gruppen, 4000);
+			ArrayList<int[]> groupe = new ArrayList<>();
+			int[] gruppe1 = {2, 30, 40, 0};			groupe.add(gruppe1);
+			int[] gruppe2 = {1, 30, 50, 1000};		groupe.add(gruppe2);
+			Wave w1 = new Wave(main, groupe, 4000);
 			
-			ArrayList<int[]> gruppen2 = new ArrayList<>();
-			int[] gruppe12 = {1, 25, 40, 1000};		gruppen2.add(gruppe12);
-			int[] gruppe22 = {2, 25, 40, 600};		gruppen2.add(gruppe22);
-			int[] gruppe32 = {1, 35, 30, 800};		gruppen2.add(gruppe32);	
-			Wave w2 = new Wave(main, gruppen2, 100);
+			ArrayList<int[]> groupe2 = new ArrayList<>();
+			int[] gruppe12 = {1, 25, 40, 1000};		groupe2.add(gruppe12);
+			int[] gruppe22 = {2, 25, 40, 600};		groupe2.add(gruppe22);
+			int[] gruppe32 = {1, 35, 30, 800};		groupe2.add(gruppe32);	
+			Wave w2 = new Wave(main, groupe2, 100);
 			
 			
 			waves.add(w1);
@@ -184,16 +184,16 @@ public class Game {
 		}
 		else if(level == 3){ 
  			monnaie -= 300;
-			ArrayList<int[]> gruppen = new ArrayList<>();
-			int[] gruppe1 = {1, 30, 30, 0};			gruppen.add(gruppe1);
-			int[] gruppe2 = {1, 40, 50, 1000};		gruppen.add(gruppe2);
-			Wave w1 = new Wave(main, gruppen, 4000);
+			ArrayList<int[]> groupe = new ArrayList<>();
+			int[] gruppe1 = {1, 30, 30, 0};			groupe.add(gruppe1);
+			int[] gruppe2 = {1, 40, 50, 1000};		groupe.add(gruppe2);
+			Wave w1 = new Wave(main, groupe, 4000);
 			
-			ArrayList<int[]> gruppen2 = new ArrayList<>();
-			int[] gruppe12 = {2, 30, 60, 1000};		gruppen2.add(gruppe12);
-			int[] gruppe22 = {1, 40, 50, 600};		gruppen2.add(gruppe22);
-			int[] gruppe32 = {2, 30, 20, 800};		gruppen2.add(gruppe32);	
-			Wave w2 = new Wave(main, gruppen2, 100);
+			ArrayList<int[]> groupe2 = new ArrayList<>();
+			int[] gruppe12 = {2, 30, 60, 1000};		groupe2.add(gruppe12);
+			int[] gruppe22 = {1, 40, 50, 600};		groupe2.add(gruppe22);
+			int[] gruppe32 = {2, 30, 20, 800};		groupe2.add(gruppe32);	
+			Wave w2 = new Wave(main, groupe2, 100);
 			
 			
 			waves.add(w1);
