@@ -61,16 +61,16 @@ public class SchussTower extends Tower {
 					schuesse.add(s);
 					i = 0;
 				}
-				//float AlteAusrichtung = ausrichtung;
+				//float AlteAusrichtung = angle_rotation;
 				if(!schussImRohr) {
 					double alpha = (double) (Math.acos(-(ziel.y-(position.y+40))/dist));
-					if(ziel.x >= (position.x+40)) {ausrichtung = (float) alpha;}
-					if(ziel.x <= (position.x+40)) {ausrichtung = (float) ((double)((2*PI)-alpha));}
+					if(ziel.x >= (position.x+40)) {angle_rotation = (float) alpha;}
+					if(ziel.x <= (position.x+40)) {angle_rotation = (float) ((double)((2*PI)-alpha));}
 				}
-				/*System.out.println(ausrichtung);
-				if(Math.abs(ausrichtung - AlteAusrichtung) >= 0.4){
-					if(ausrichtung < AlteAusrichtung){ausrichtung = AlteAusrichtung - 0.3f;}
-					else{ausrichtung = AlteAusrichtung + 0.3f;}
+				/*System.out.println(angle_rotation);
+				if(Math.abs(angle_rotation - AlteAusrichtung) >= 0.4){
+					if(angle_rotation < AlteAusrichtung){angle_rotation = AlteAusrichtung - 0.3f;}
+					else{angle_rotation = AlteAusrichtung + 0.3f;}
 					
 				}*/
 				i++;				
@@ -93,9 +93,9 @@ public class SchussTower extends Tower {
 	void showTower() {
 		main.image(base, position.x, position.y);
 		main.translate((position.x + (gun.height/2)) , (position.y + (gun.height/2)));
-		main.rotate(ausrichtung);
+		main.rotate(angle_rotation);
 		main.image(gun,-(gun.height/2),-(gun.height/2) /*- (gun.width / 2)*/);
-		main.rotate((float)-ausrichtung);
+		main.rotate((float)-angle_rotation);
 		main.translate( -(position.x + (gun.height/2)), -(position.y + (gun.height/2)));
 	}
 	

@@ -29,7 +29,7 @@ public class Tower {
 	PImage base;
 	PImage gun;
 	PImage cover;
-	float ausrichtung;
+	float angle_rotation;
 	int button;
 	public PVector position;
 	
@@ -91,8 +91,8 @@ public class Tower {
 					shoot(position.x + 40, position.y + 40, g.position.x, g.position.y);
 					game.energy -= (energyKonsum);
 					g.health = g.health - schaden;
-					if(g.position.x >= (position.x+40)) {ausrichtung = (float) alpha;}
-					if(g.position.x <= (position.x+40)) {ausrichtung = (float) ((double)((2*PI)-alpha));}
+					if(g.position.x >= (position.x+40)) {angle_rotation = (float) alpha;}
+					if(g.position.x <= (position.x+40)) {angle_rotation = (float) ((double)((2*PI)-alpha));}
 					
 					
 					break;

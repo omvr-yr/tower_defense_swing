@@ -44,8 +44,8 @@ public class LaserTower extends Tower {
 				this.shoot(position.x + 40, position.y + 40, g.position.x, g.position.y);
 				game.energy -= energyKonsum;
 				g.health = g.health - schaden;
-				if(g.position.x >= (position.x+40)) {ausrichtung = (float) alpha;}
-				if(g.position.x <= (position.x+40)) {ausrichtung = (float) ((double)((2*PI)-alpha));}
+				if(g.position.x >= (position.x+40)) {angle_rotation = (float) alpha;}
+				if(g.position.x <= (position.x+40)) {angle_rotation = (float) ((double)((2*PI)-alpha));}
 				break;
 			}
 		}
@@ -54,9 +54,9 @@ public class LaserTower extends Tower {
 	void showTower() {
 		main.image(base, position.x, position.y);
 		main.translate((position.x + (gun.height/2)) , (position.y + (gun.height/2)));
-		main.rotate(ausrichtung);
+		main.rotate(angle_rotation);
 		main.image(gun,-(gun.height/2), -(gun.width / 2));
-		main.rotate((float)-ausrichtung);
+		main.rotate((float)-angle_rotation);
 		main.translate( -(position.x + (gun.height/2)), -(position.y + (gun.height/2)));
 	}
 	

@@ -20,7 +20,7 @@ public class Ennemi {
 	double health_max;
 	int loot;
 	int drehGesch;
-	int ausrichtung;
+	int angle_rotation;
 	int aktuellerWendepunkt = 0;
 	public PVector direction = new PVector (0, 0);
 	PVector position;
@@ -109,38 +109,38 @@ public class Ennemi {
 	}
 	
 	public void init_ausrichtung(){
-		if (direction.x == 1){ausrichtung = 90;}
-		if (direction.x == -1){ausrichtung = 270;}
-		if (direction.y == 1){ausrichtung = 180;}
-		if (direction.y == -1){ausrichtung = 0;}
+		if (direction.x == 1){angle_rotation = 90;}
+		if (direction.x == -1){angle_rotation = 270;}
+		if (direction.y == 1){angle_rotation = 180;}
+		if (direction.y == -1){angle_rotation = 0;}
 	}
 	
 	void drehen(){
-		if (ausrichtung == 360){ausrichtung = 0;}
-		if (direction.x == 1 && ausrichtung != 90){
-			if(ausrichtung < 90){ausrichtung = ausrichtung + drehGesch;}
-			if(ausrichtung > 90){ausrichtung = ausrichtung - drehGesch;}
+		if (angle_rotation == 360){angle_rotation = 0;}
+		if (direction.x == 1 && angle_rotation != 90){
+			if(angle_rotation < 90){angle_rotation = angle_rotation + drehGesch;}
+			if(angle_rotation > 90){angle_rotation = angle_rotation - drehGesch;}
 		}
-		if (direction.x == -1 && ausrichtung != 270){
-			if(ausrichtung >= 180 && ausrichtung < 270){ausrichtung = ausrichtung + drehGesch;}
-			if(ausrichtung == 0){ausrichtung = 360 - drehGesch;}
-			if(ausrichtung > 270){ausrichtung = ausrichtung - drehGesch;}
+		if (direction.x == -1 && angle_rotation != 270){
+			if(angle_rotation >= 180 && angle_rotation < 270){angle_rotation = angle_rotation + drehGesch;}
+			if(angle_rotation == 0){angle_rotation = 360 - drehGesch;}
+			if(angle_rotation > 270){angle_rotation = angle_rotation - drehGesch;}
 		}
-		if (direction.y == 1 && ausrichtung != 180){
-			if(ausrichtung < 180){ausrichtung = ausrichtung + drehGesch;}
-			if(ausrichtung > 180){ausrichtung = ausrichtung - drehGesch;}
+		if (direction.y == 1 && angle_rotation != 180){
+			if(angle_rotation < 180){angle_rotation = angle_rotation + drehGesch;}
+			if(angle_rotation > 180){angle_rotation = angle_rotation - drehGesch;}
 		}
-		if (direction.y == -1 && ausrichtung != 0){
-			if(ausrichtung <= 90){ausrichtung = ausrichtung - drehGesch;}
-			if(ausrichtung >= 270){ausrichtung = ausrichtung + drehGesch;}
+		if (direction.y == -1 && angle_rotation != 0){
+			if(angle_rotation <= 90){angle_rotation = angle_rotation - drehGesch;}
+			if(angle_rotation >= 270){angle_rotation = angle_rotation + drehGesch;}
 		}
 	}
 	void showTower() {		
 		drehen();
 		main.translate((int)position.x , (int)position.y);
-		main.rotate(ausrichtung*PConstants.TWO_PI/360);
+		main.rotate(angle_rotation*PConstants.TWO_PI/360);
 		main.image(bild, - (bild.height / 2), - (bild.width / 2));
-		main.rotate(-(ausrichtung*PConstants.TWO_PI/360));
+		main.rotate(-(angle_rotation*PConstants.TWO_PI/360));
 		main.translate((int)-position.x ,(int) - position.y);
 		
 		//main.image(bild,position.x,position.y);

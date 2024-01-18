@@ -97,14 +97,14 @@ public class BlitzTower extends Tower {
 		}
 	}
 	void drehen(){
-		ausrichtung += rotSpeed;
+		angle_rotation += rotSpeed;
 	}
 	void showTower() {
 		main.image(base, position.x, position.y);
 		main.translate((position.x + (gun.height/2)) , (position.y + (gun.height/2)));
-		main.rotate(ausrichtung);
+		main.rotate(angle_rotation);
 		main.image(gun,-(gun.height/2),-(gun.height/2) /*- (gun.width / 2)*/);
-		main.rotate((float)-ausrichtung);
+		main.rotate((float)-angle_rotation);
 		main.translate( -(position.x + (gun.height/2)), -(position.y + (gun.height/2)));
 	}
 	void covershowTower() {
