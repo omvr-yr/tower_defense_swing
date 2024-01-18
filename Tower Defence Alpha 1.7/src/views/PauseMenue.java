@@ -24,15 +24,15 @@ public class PauseMenue {
 		
 		main.fill(255);
 		if(eintrag == 1) {main.fill(0,220,255);}
-		main.text("Fortsetzen",450, 300);
+		main.text("",450, 300);
 
 		main.fill(255);
 		if(eintrag == 2) {main.fill(0,220,255);}
-		main.text("Hauptmenue",450, 400);
+		main.text("",450, 400);
 				
 		main.textSize(100);
 		main.fill(255,20,20);
-		main.text("Pause",450,200);
+		main.text("",450,200);
 	}		
 
 	void mainMenueWeiter() {
