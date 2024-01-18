@@ -228,7 +228,7 @@ public class Game {
 		map = new Maps(main,this,Lv);
 		aire_point = map.getWendepunkte_pos();
 		aire_dir = map.getWendepunkte_dir();
-		surface =  map.getWegFlaechen();
+		surface =  map.getsurfaces();
 	}
 	
 	void neueWelle(int start, int laenge,int rate, int type) {

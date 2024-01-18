@@ -16,10 +16,10 @@ public class Maps {
 	int posYalt;
 	public ArrayList<PVector> aire_point = new ArrayList<PVector>();
 	public ArrayList<PVector> aire_dir = new ArrayList<PVector>();
-	public ArrayList<Point[]> wegFlaechen = new ArrayList<Point[]>();
-	public ArrayList<Point[]> wegFlaechen2 = new ArrayList<Point[]>();
+	public ArrayList<Point[]> surfaces = new ArrayList<Point[]>();
+	public ArrayList<Point[]> surfaces2 = new ArrayList<Point[]>();
 	public PImage back;
-	int maxWendePunkte;
+	int maxPoints;
 	PVector	p0_pos;	PVector p1_pos;	PVector p2_pos;	PVector p3_pos;	PVector p4_pos;	PVector p5_pos;	PVector p6_pos;	PVector p7_pos; PVector p8_pos;
 	PVector p0_dir;	PVector p1_dir;	PVector p2_dir;	PVector p3_dir;	PVector p4_dir;	PVector p5_dir;	PVector p6_dir;	PVector p7_dir;	PVector p8_dir;
 	Point[] p0_area = new Point[2]; Point[] p1_area = new Point[2]; Point[] p2_area = new Point[2]; Point[] p3_area = new Point[2]; Point[] p4_area = new Point[2];
@@ -36,7 +36,7 @@ public class Maps {
 		rand4_area[0] = new Point(-200, -200); 	rand4_area[1] = new Point(1024, 0);
 	
 		if(Lv == 1) {
-			maxWendePunkte = 9;
+			maxPoints = 9;
 			p0_pos = new PVector(696, 720);
 			p1_pos = new PVector(696, 380);
 			p2_pos = new PVector(532, 380);
@@ -69,7 +69,7 @@ public class Maps {
 			
 			back = main.loadImage("BackLv1.png");
 		} else if(Lv == 2) {
-			maxWendePunkte = 9;
+			maxPoints = 9;
 			p0_pos = new PVector(300, 720);
 			p1_pos = new PVector(300, 270);
 			p2_pos = new PVector(550, 270);
@@ -104,19 +104,19 @@ public class Maps {
 
 		}
 				
-		wegFlaechen.add(rand1_area); wegFlaechen.add(rand2_area); wegFlaechen.add(rand3_area); wegFlaechen.add(rand4_area);		
+		surfaces.add(rand1_area); surfaces.add(rand2_area); surfaces.add(rand3_area); surfaces.add(rand4_area);		
 		
-		for(int n = 0; n < maxWendePunkte; n++) {
+		for(int n = 0; n < maxPoints; n++) {
 			switch(n) {
-				case 0: aire_point.add(p0_pos); aire_dir.add(p0_dir); wegFlaechen.add(p0_area); break;
-				case 1: aire_point.add(p1_pos); aire_dir.add(p1_dir); wegFlaechen.add(p1_area); break;
-				case 2: aire_point.add(p2_pos); aire_dir.add(p2_dir); wegFlaechen.add(p2_area); break;
-				case 3: aire_point.add(p3_pos); aire_dir.add(p3_dir); wegFlaechen.add(p3_area); break;
-				case 4: aire_point.add(p4_pos); aire_dir.add(p4_dir); wegFlaechen.add(p4_area); break;
-				case 5: aire_point.add(p5_pos); aire_dir.add(p5_dir); wegFlaechen.add(p5_area); break;
-				case 6: aire_point.add(p6_pos); aire_dir.add(p6_dir); wegFlaechen.add(p6_area); break;
-				case 7: aire_point.add(p7_pos); aire_dir.add(p7_dir); wegFlaechen.add(p7_area); break;
-				case 8: aire_point.add(p8_pos); aire_dir.add(p8_dir); wegFlaechen.add(p8_area); break;			
+				case 0: aire_point.add(p0_pos); aire_dir.add(p0_dir); surfaces.add(p0_area); break;
+				case 1: aire_point.add(p1_pos); aire_dir.add(p1_dir); surfaces.add(p1_area); break;
+				case 2: aire_point.add(p2_pos); aire_dir.add(p2_dir); surfaces.add(p2_area); break;
+				case 3: aire_point.add(p3_pos); aire_dir.add(p3_dir); surfaces.add(p3_area); break;
+				case 4: aire_point.add(p4_pos); aire_dir.add(p4_dir); surfaces.add(p4_area); break;
+				case 5: aire_point.add(p5_pos); aire_dir.add(p5_dir); surfaces.add(p5_area); break;
+				case 6: aire_point.add(p6_pos); aire_dir.add(p6_dir); surfaces.add(p6_area); break;
+				case 7: aire_point.add(p7_pos); aire_dir.add(p7_dir); surfaces.add(p7_area); break;
+				case 8: aire_point.add(p8_pos); aire_dir.add(p8_dir); surfaces.add(p8_area); break;			
 			}
 		}
 	}
@@ -129,8 +129,8 @@ public class Maps {
 		return aire_dir;
 	}
 	
-	public ArrayList<Point[]> getWegFlaechen() {
-		return wegFlaechen;
+	public ArrayList<Point[]> getsurfaces() {
+		return surfaces;
 	}
 	
 	void drawMap() {
