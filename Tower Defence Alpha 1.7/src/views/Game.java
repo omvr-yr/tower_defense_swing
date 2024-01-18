@@ -289,7 +289,15 @@ public class Game {
 	void waveManager() {
 		if(actuellewave == null) {
 			if(ennemis.size() == 0) {
+				main.fill(20, 20, 20, 220);
+				main.rect(285, 325, 320, 90);
+
+				// Changer la taille du texte uniquement pour "You Win !"
+				main.textSize(64);
+				main.fill(10, 255, 10);
 				main.text("You Win !", 300, 400);
+				main.textSize(10);
+
 				System.out.println("You Win!");
 			}
 		} else {
