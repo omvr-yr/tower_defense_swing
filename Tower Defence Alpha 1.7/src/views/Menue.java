@@ -143,7 +143,7 @@ public class Menue {
 		tabsZeichnen(groeseX, groeseY, rectX, posY1,posY2, posY3);
 	}
 	
-	void energyAnzeige() {
+	void energy_gestion() {
 		int balkenLaenge_max = 400;
 		float faktor = game.energy/game.maxEnergy;
 		System.out.println("-------------------------");
@@ -166,7 +166,7 @@ public class Menue {
 		main.text((int) game.energy,430,50);
 		main.noStroke();
 	}
-	void increase_energyAnzeige() {
+	void increase_energy_gestion() {
 //		int balkenLaenge_max = 400;
 		float faktor = game.maxEnergy/game.energy;
 		System.out.println("-------------------------");
@@ -192,7 +192,7 @@ public class Menue {
 		main.noStroke();
 	}
 	
-	void lebensAnzeige() {
+	void lifelinegestion() {
 		int balkenLaenge_max = 300;
 		float faktor = (float) game.vie/game.maxVie;
 		int faktorGruen = (int) (faktor*250);
@@ -251,9 +251,9 @@ public class Menue {
 		SidePanel.affiche(tap);
 		if(flaechen_zeigen) {surface();}
 		if(building) {bauHelp.affiche();}
-		lebensAnzeige();
-		energyAnzeige();
-//		increase_energyAnzeige();
+		lifelinegestion();
+		energy_gestion();
+//		increase_energy_gestion();
 		anzeigen();
 		keyControl();
 		mouseOverBuilding();

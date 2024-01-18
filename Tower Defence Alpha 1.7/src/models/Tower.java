@@ -119,7 +119,7 @@ public class Tower {
 		else if(main.steuerung.mausbedeckt(555+100, 776, 30, 18)) {button = 4;}
 		else{button = 0;}
 		
-		if(main.steuerung.click("links")) {buttonWeiter();}
+		if(main.steuerung.click("links")) {buttongestiontour();}
 		
 		if(button == 1) {main.fill(50,220,255);}
 		main.text("Augmenter pour : " + 90, 520, 740);
@@ -138,7 +138,7 @@ public class Tower {
 		return false;
 	}
 	
-	void buttonWeiter() {
+	void buttongestiontour() {
 		switch (button) {
 		case 1: upgradeSchaden((float) 0.1, 50); break;
 		case 2: upgradeRange(10, 50); break;

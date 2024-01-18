@@ -99,7 +99,7 @@ public class SchussTower extends Tower {
 		main.translate( -(position.x + (gun.height/2)), -(position.y + (gun.height/2)));
 	}
 	
-	void buttonWeiter() {
+	void buttongestiontour() {
 		switch (button) {
 		case 1: upgradeSchaden((float) 1, 80); break;
 		case 2: upgradeRange(10, 60); break;

@@ -111,7 +111,7 @@ public class BlitzTower extends Tower {
 		main.image(cover, position.x, position.y);
 	}
 	
-	void buttonWeiter() {
+	void buttongestiontour() {
 		switch (button) {
 		case 1: upgradeSchaden((float) 0.1, 100); break;
 		case 2: upgradeRange(10, 60); break;
