@@ -82,7 +82,7 @@ public class Tower {
 	}
 	
 	void zielen_ausrichten() {
-		for (Gegner g : game.ennemis) {
+		for (Ennemi g : game.ennemis) {
 				if(angreifbar(g)){
 					PVector positionGun = new PVector(position.x+(largeur/2), position.y+(hauteur/2));
 					double dist = dist(positionGun, g.position);
@@ -129,7 +129,7 @@ public class Tower {
 		main.fill(255);
 	}
 	
-	boolean angreifbar(Gegner a){
+	boolean angreifbar(Ennemi a){
 		PVector positionGun = new PVector(position.x+(largeur/2), position.y+(hauteur/2));
 		double dist = dist(positionGun, a.position);
 		if(a.position.y < 720 && dist <= range){

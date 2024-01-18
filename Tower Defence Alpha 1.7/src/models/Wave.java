@@ -24,9 +24,9 @@ public class Wave {
 	}
 	
 	void newEnnemi(int offsetPos, int type) {
-		Gegner g = new Gegner(main);
-		if(type == 1){g = new GegnerType1(main);}
-		if(type == 2){g = new GegnerType2(main);}
+		Ennemi g = new Ennemi(main);
+		if(type == 1){g = new Ennemi_un(main);}
+		if(type == 2){g = new Ennemi_deux(main);}
 		
 		g.direction = game.aire_dir.get(0);
 		PVector spawnPosition = new PVector();

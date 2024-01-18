@@ -34,7 +34,7 @@ public class LaserTower extends Tower {
 	}
 	
 	void zielen_ausrichten() {
-		for (Gegner g : game.ennemis) {
+		for (Ennemi g : game.ennemis) {
 			if(angreifbar(g)){
 				PVector positionGun = new PVector(position.x+(largeur/2), position.y+(hauteur/2));
 				double dist = dist(positionGun, g.position);

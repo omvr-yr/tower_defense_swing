@@ -51,7 +51,7 @@ public class SchussTower extends Tower {
 			schussImRohr = false;
 		}
 		System.out.println(schussImRohr);
-		for (Gegner g : game.ennemis) {
+		for (Ennemi g : game.ennemis) {
 			if(angreifbar(g)){
 				PVector ziel = zielBerechnen(positionGun, g);
 				double dist = dist(positionGun, ziel);
@@ -80,7 +80,7 @@ public class SchussTower extends Tower {
 					
 	}
 	
-	PVector zielBerechnen(PVector start, Gegner g) {
+	PVector zielBerechnen(PVector start, Ennemi g) {
 		PVector ziel = new PVector(0,0);
 		flugZeit = (dist(start, g.position)/schussSpeed);
 		
@@ -117,7 +117,7 @@ public class SchussTower extends Tower {
 	
 	class shoot{
 		Main main;
-		Gegner geg;
+		Ennemi geg;
 		int i;
 		double lifeTime;
 		double flugTime;
@@ -126,7 +126,7 @@ public class SchussTower extends Tower {
 		PVector schussPos = new PVector(0,0);
 		PVector schussRichtung = new PVector(0,0);
 		
-		public shoot(Main ma, Gegner g, PVector startPos, PVector zielPos, double fZ) {
+		public shoot(Main ma, Ennemi g, PVector startPos, PVector zielPos, double fZ) {
 			main = ma;
 			geg = g;
 			i = 0;
@@ -146,7 +146,7 @@ public class SchussTower extends Tower {
 			}*/
 			//else {lifeTime++;}
 			
-			/*for(Gegner zg : game.ennemis) {
+			/*for(Ennemi zg : game.ennemis) {
 				if(dist(schussPos, zg.position) < 10){
 					geg.health = geg.health - schaden;
 					loeschSchuesse.add(this);				
@@ -157,7 +157,7 @@ public class SchussTower extends Tower {
 				loeschSchuesse.add(this);	
 			}
 			
-			for(Gegner ge : game.ennemis){
+			for(Ennemi ge : game.ennemis){
 			if(dist(schussPos, ge.position) < ge.bild.height){
 				geg.health = ge.health - schaden;
 				loeschSchuesse.add(this);	

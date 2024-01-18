@@ -8,9 +8,9 @@ import java.util.Comparator;
 import models.BlitzTower;
 import models.Building;
 import models.EnergyGenerator;
-import models.Gegner;
-import models.GegnerType1;
-import models.GegnerType2;
+import models.Ennemi;
+import models.Ennemi_un;
+import models.Ennemi_deux;
 import models.LaserTower;
 import models.Roboter;
 import models.SchussTower;
@@ -43,7 +43,7 @@ public class Game {
 	public ArrayList<Point[]> surface;
 	public ArrayList<PVector> aire_point;
 	public ArrayList<PVector> aire_dir;
-	public ArrayList<Gegner> ennemis = new ArrayList<Gegner>();
+	public ArrayList<Ennemi> ennemis = new ArrayList<Ennemi>();
 	public ArrayList<Tower> towers = new ArrayList<Tower>();
 	public ArrayList<Roboter> roboters = new ArrayList<Roboter>();
 	public ArrayList<Building> buildings = new ArrayList<Building>();
@@ -211,9 +211,9 @@ public class Game {
 	}
 
 	void newEnnemi(int offsetPos, int type) {
-		Gegner g = new Gegner(main);
-		if(type == 1){g = new GegnerType1(main);}
-		if(type == 2){g = new GegnerType2(main);}
+		Ennemi g = new Ennemi(main);
+		if(type == 1){g = new Ennemi_un(main);}
+		if(type == 2){g = new Ennemi_deux(main);}
 		
 		g.direction = aire_dir.get(0);
 		PVector spawnPosition = new PVector();
@@ -262,7 +262,7 @@ public class Game {
 	
 	void clean() {
 		for (Object o : retirer) {
-			if(o instanceof Gegner) {ennemis.remove(o);}
+			if(o instanceof Ennemi) {ennemis.remove(o);}
 			if(o instanceof Tower) {towers.remove(o);}
 			if(o instanceof Building) {buildings.remove(o);}
 			if(o instanceof Point[]) {surface.remove(o);} 
@@ -328,7 +328,7 @@ public class Game {
 		main.translate(100, 0);
 		map.drawMap();
 		for (Building b : buildings) {b.affiche();}
-		for (Gegner g : ennemis) {g.affiche();}
+		for (Ennemi g : ennemis) {g.affiche();}
 		for (Tower t : towers) {t.affiche();}
 		map.drawDetails();
 		waveManager();

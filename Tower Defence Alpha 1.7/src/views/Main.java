@@ -55,8 +55,8 @@ public class Main extends PApplet {
 	
 	void settingErstellen() {
 		Settings LT_settings = new Settings(this,"LaserTower"); settingObjekte.add(LT_settings);
-		Settings GT1_settings = new Settings(this,"GegnerType1"); settingObjekte.add(GT1_settings);
-		Settings GT2_settings = new Settings(this,"GegnerType2"); settingObjekte.add(GT2_settings);
+		Settings GT1_settings = new Settings(this,"Ennemi_un"); settingObjekte.add(GT1_settings);
+		Settings GT2_settings = new Settings(this,"Ennemi_deux"); settingObjekte.add(GT2_settings);
 		Settings BT_settings = new Settings(this,"BlitzTower"); settingObjekte.add(BT_settings);
 		Settings EG_settings = new Settings(this,"EnergyGenerator"); settingObjekte.add(EG_settings);
 		Settings ST_settings = new Settings(this,"SchussTower"); settingObjekte.add(ST_settings);

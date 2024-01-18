@@ -2,11 +2,11 @@ package models;
 
 import views.Main;
 
-public class GegnerType1 extends Gegner {	
-	
-	public GegnerType1(Main ma) {
+public class Ennemi_deux extends Ennemi {
+			
+	public Ennemi_deux(Main ma) {
 		super(ma);
-		setting = main.settings("Gegner Type1");
+		setting = main.settings("Ennemi Type2");
 
 		health = setting.health_max;
 		health_max = setting.health_max;
@@ -16,14 +16,16 @@ public class GegnerType1 extends Gegner {
 		speed = setting.speed;
 		drehGesch = setting.drehGesch;
 		bild = setting.bild;
-	}	
+
+	}
 	
 	public void affiche() {
 		durchkommen();
 		sterben();
 		bewegen();
 		showTower();
-		lebensleiste();	
+		lebensleiste();
 		speedReset();
-	}		
+	}
+	
 }

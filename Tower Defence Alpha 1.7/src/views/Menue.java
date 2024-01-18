@@ -3,7 +3,7 @@ import java.awt.Point;
 
 import models.Builder;
 import models.Building;
-import models.Gegner;
+import models.Ennemi;
 import models.Settings;
 import models.Tower;
 import models.Wave;
@@ -70,7 +70,7 @@ public class Menue {
 		if(game.secours) {main.keyCode = 0; main.key = 0; game.secours = false;}
 		if(steuerung.key('w')) {game.wave += 1;}
 		if(steuerung.key('g')) { game.monnaie += 10; }
-		if(steuerung.key('c')) { for (Gegner g : game.ennemis) {game.retirer.add(g);} }
+		if(steuerung.key('c')) { for (Ennemi g : game.ennemis) {game.retirer.add(g);} }
 		//if(steuerung.key('v')) { for (Tower t : game.towers) {game.retirer.add(t); game.removeBedeckteFlaechen(t.position.x+((main.settings(t.name).largeur/2)-main.settings(t.name).HBbreite), t.position.y+((main.settings(t.name).hauteur/2)-main.settings(t.name).HBhoehe));} }
 		if(steuerung.key('x')) { for (Building b : game.buildings) {game.retirer.add(b); game.removeBedeckteFlaechen(b.position.x, b.position.y);} }
 		if(steuerung.key('b')) { if(flaechen_zeigen) {flaechen_zeigen = false;} else{flaechen_zeigen = true;} }

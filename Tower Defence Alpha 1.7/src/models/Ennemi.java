@@ -6,7 +6,7 @@ import views.Main;
 import views.Maps;
 import views.Game;
 
-public class Gegner {
+public class Ennemi {
 	
 	Main main;
 	Maps map;
@@ -26,7 +26,7 @@ public class Gegner {
 	PVector position;
 	PImage bild;	
 	
-	public Gegner(Main ma) {
+	public Ennemi(Main ma) {
 		main = ma;
 		game = main.game();
 		

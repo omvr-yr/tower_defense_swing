@@ -45,8 +45,8 @@ public final class Settings {
 	
 	void setupSetting(String art) {
 
-	if(art == "GegnerType1") {
-	name = "Gegner Type1";
+	if(art == "Ennemi_un") {
+	name = "Ennemi Type1";
 	health_max = 100;
 	speed = 2;
 	speed_Max = 2;
@@ -56,8 +56,8 @@ public final class Settings {
 	bild = main.loadImage("GegnerLv1.png");;
 	}
 	
-	else if(art == "GegnerType2") {
-	name = "Gegner Type2";
+	else if(art == "Ennemi_deux") {
+	name = "Ennemi Type2";
 	health_max = 90;
 	speed = 3;
 	speed_Max = 3;
@@ -169,7 +169,7 @@ public final class Settings {
 		slowFactor		= 0;
 	}	
 	}
-	public static String GegnerType1_name = "Gegner Type1";
+	public static String GegnerType1_name = "Ennemi Type1";
 	public static float GegnerType1_health_max = 100;
 	public static float GegnerType1_speed = 2;
 	public static float GegnerType1_speed_Max = 2;
@@ -178,7 +178,7 @@ public final class Settings {
 	public static int GegnerType1_drehGesch = 90;//nur Teiler von 90 d.h: 1,2,3,5,6,9,10,15,18,30,45,90
 	public static PImage GegnerType1_bild = null; //loadTexture("GegnerLv1");;
 	
-	public static String GegnerType2_name = "Gegner Type2";
+	public static String GegnerType2_name = "Ennemi Type2";
 	public static float GegnerType2_health_max = 90;
 	public static float GegnerType2_speed = 3;
 	public static float GegnerType2_speed_Max = 3;
