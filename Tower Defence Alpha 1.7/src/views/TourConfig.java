@@ -1,10 +1,10 @@
 package views;
 
-public class TowerEintrag extends SeitenLeiste{
+public class TourConfig extends SidePanel{
 	
 	int preis;
 	
-	public TowerEintrag(Main ma, Menue me, String setName, int num) {
+	public TourConfig(Main ma, Menue me, String setName, int num) {
 		super(ma, me);
 		setting = main.settings(setName);
 		eintrag = num;

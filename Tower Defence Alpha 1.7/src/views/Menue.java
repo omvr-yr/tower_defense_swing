@@ -14,7 +14,7 @@ public class Menue {
 	Game game;
 	Settings settings;
 	Wave waves;
-	SeitenLeiste seitenLeiste;
+	SidePanel SidePanel;
 	BauHilfe bauHelp;
 	InfoLeiste infoLeiste;
 	
@@ -34,13 +34,13 @@ public class Menue {
 		//settings = main.settings();
 		tap = 1;
 		steuerung = main.steuerung();
-		neueSeitenLeiste();
+		neueSidePanel();
 		neueInfoLeiste();
 	}
 	
-	void neueSeitenLeiste() {
-		seitenLeiste  = new SeitenLeiste(main, this); 
-		seitenLeiste.bauEintraegeAdden();
+	void neueSidePanel() {
+		SidePanel  = new SidePanel(main, this); 
+		SidePanel.bauEintraegeAdden();
 	}
 	
 	void neueInfoLeiste() {
@@ -76,8 +76,8 @@ public class Menue {
 		if(steuerung.key('b')) { if(flaechen_zeigen) {flaechen_zeigen = false;} else{flaechen_zeigen = true;} }
 		if(steuerung.key('l')) { game.vie += 10; game.maxVie += 10;}
 		if(steuerung.key('e')) { game.energy += 10; game.maxEnergy += 10;}
-		if(steuerung.key('n')) { seitenLeiste.offset += 4;}
-		if(steuerung.key('m')) { seitenLeiste.offset -= 4;}
+		if(steuerung.key('n')) { SidePanel.offset += 4;}
+		if(steuerung.key('m')) { SidePanel.offset -= 4;}
 		if(steuerung.key('s')) { System.out.println(game.towers);}
 	}
 	
@@ -138,7 +138,7 @@ public class Menue {
 				if(steuerung.mausbedeckt(posY1 + 100, 730, groeseX, groeseY)){tap = 1;}
 				if(steuerung.mausbedeckt(posY2 + 100, 730, groeseX, groeseY)){tap = 2;}
 				if(steuerung.mausbedeckt(posY3 + 100, 730, groeseX, groeseY)){tap = 3;}
-				//seitenLeiste.offset = 0;
+				//SidePanel.offset = 0;
 		}
 		tabsZeichnen(groeseX, groeseY, rectX, posY1,posY2, posY3);
 	}
@@ -248,7 +248,7 @@ public class Menue {
 	public void machMenue() {
 		hintergrundAnzeigen();
 		infoLeiste.machDeinDing();	
-		seitenLeiste.machDeinDing(tap);
+		SidePanel.machDeinDing(tap);
 		if(flaechen_zeigen) {surface();}
 		if(building) {bauHelp.machDeinDing();}
 		lebensAnzeige();

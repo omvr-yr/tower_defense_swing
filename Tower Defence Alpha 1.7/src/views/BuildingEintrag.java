@@ -1,6 +1,6 @@
 package views;
 
-public class BuildingEintrag extends SeitenLeiste{
+public class BuildingEintrag extends SidePanel{
 	Main main;
 	int preis;
 	

@@ -6,7 +6,7 @@ import models.BauHilfe;
 import models.Settings;
 import processing.core.PImage;
 
-public class SeitenLeiste {
+public class SidePanel {
 	Settings setting;
 	Main main;
 	Game game;
@@ -22,11 +22,11 @@ public class SeitenLeiste {
 	PImage image3;
 	String name;
 	int position;
-	public ArrayList<TowerEintrag> tap1 = new ArrayList<TowerEintrag>();
+	public ArrayList<TourConfig> tap1 = new ArrayList<TourConfig>();
 	public ArrayList<BuildingEintrag> tap2 = new ArrayList<BuildingEintrag>();
 	
 	
-	public SeitenLeiste(Main ma, Menue me) {
+	public SidePanel(Main ma, Menue me) {
 		main = ma;
 		menu = me;
 		game = main.game();
@@ -37,9 +37,9 @@ public class SeitenLeiste {
 		//tap 1
 		tap1.clear();
 		int num = 0;
-	 	TowerEintrag t1 = new TowerEintrag(main, menu, "Tour Laser", num); tap1.add(t1); num++;
-	 	TowerEintrag t3 = new TowerEintrag(main, menu, "Tour Éclair", num); tap1.add(t3); num++;
-	 	TowerEintrag t4 = new TowerEintrag(main, menu, "Tour de Tir", num); tap1.add(t4); num++;
+	 	TourConfig t1 = new TourConfig(main, menu, "Tour Laser", num); tap1.add(t1); num++;
+	 	TourConfig t3 = new TourConfig(main, menu, "Tour Éclair", num); tap1.add(t3); num++;
+	 	TourConfig t4 = new TourConfig(main, menu, "Tour de Tir", num); tap1.add(t4); num++;
 	 	
 		//tap 2
 	 	tap2.clear();
@@ -122,7 +122,7 @@ public class SeitenLeiste {
 		 scrollen();
 		 offsetMax_Min(tap);
 		 darstellen(tap);
-		 if(tap == 1){for(TowerEintrag e : tap1) {e.machDeinDing(offset);}}
+		 if(tap == 1){for(TourConfig e : tap1) {e.machDeinDing(offset);}}
 		 if(tap == 2){for(BuildingEintrag e : tap2) {e.machDeinDing(offset);}}
 	 }
 	
