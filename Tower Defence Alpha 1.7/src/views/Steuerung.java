@@ -12,7 +12,7 @@ public class Steuerung /*implements MouseListener, KeyListener, MouseWheelListen
 	MouseWheelEvent event;
 	public int MouseWheel;
 	
-	public ArrayList<Object> aktiveFlaechen = new ArrayList<Object>();
+	public ArrayList<Object> SurfaceActuellen = new ArrayList<Object>();
 	
 	public Steuerung(Main ma) {
 		main = ma;

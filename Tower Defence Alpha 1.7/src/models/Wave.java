@@ -42,7 +42,7 @@ public class Wave {
 		}
 	}
 
-	public void machDeinDing() {
+	public void affiche() {
 		try {
 			if(waveTimer > game.waveOffsetTime) {
 			

@@ -12,7 +12,7 @@ public class InfoLeiste {
 		menu = me;
 	}
 	
-	public void machDeinDing() {
+	public void affiche() {
 		if(menu.infoObjekt != null) {((Tower) menu.infoObjekt).infoDisplay();}
 	}	
 }

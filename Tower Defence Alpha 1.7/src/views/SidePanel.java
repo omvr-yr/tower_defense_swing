@@ -118,12 +118,12 @@ public class SidePanel {
 		}
 	}
 	
-	 public void machDeinDing(int tap) {
+	 public void affiche(int tap) {
 		 scrollen();
 		 offsetMax_Min(tap);
 		 showTower(tap);
-		 if(tap == 1){for(TourConfig e : tap1) {e.machDeinDing(offset);}}
-		 if(tap == 2){for(BuildingEintrag e : tap2) {e.machDeinDing(offset);}}
+		 if(tap == 1){for(TourConfig e : tap1) {e.affiche(offset);}}
+		 if(tap == 2){for(BuildingEintrag e : tap2) {e.affiche(offset);}}
 	 }
 	
 }

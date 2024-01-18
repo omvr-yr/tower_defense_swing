@@ -1,10 +1,10 @@
 package views;
 
-public class AktiveFlaeche extends Steuerung{
+public class SurfaceActuelle extends Steuerung{
 
 	Object objekt;
 
-	public AktiveFlaeche(Main ma,Object ob) {
+	public SurfaceActuelle(Main ma,Object ob) {
 		super(ma);
 		objekt = ob;
 	}

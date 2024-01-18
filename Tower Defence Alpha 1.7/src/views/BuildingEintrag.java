@@ -14,7 +14,7 @@ public class BuildingEintrag extends SidePanel{
 		icon = setting.icon;
 	}
 
-	public void machDeinDing(int o){
+	public void affiche(int o){
 		positionieren(o);
 		showTower_Icons_info(setting.preis, setting.name);
 		bauen(name, preis);

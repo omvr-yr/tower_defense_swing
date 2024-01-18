@@ -9,8 +9,8 @@ import processing.core.PVector;
 import views.Main;
 
 public class SchussTower extends Tower {
-	ArrayList<Schuss> schuesse = new ArrayList<Schuss>();
-	ArrayList<Schuss> loeschSchuesse = new ArrayList<Schuss>();
+	ArrayList<shoot> schuesse = new ArrayList<shoot>();
+	ArrayList<shoot> loeschSchuesse = new ArrayList<shoot>();
 	int i = 0;
 	double flugZeit;
 	int schussLaenge;
@@ -57,7 +57,7 @@ public class SchussTower extends Tower {
 				double dist = dist(positionGun, ziel);
 				if(i > frequenz) {
 					game.energy -= energyKonsum;
-					Schuss s = new Schuss(main, g, positionGun, ziel, 0);
+					shoot s = new shoot(main, g, positionGun, ziel, 0);
 					schuesse.add(s);
 					i = 0;
 				}
@@ -108,14 +108,14 @@ public class SchussTower extends Tower {
 		}
 	}
 	
-	public void machDeinDing() {
+	public void affiche() {
 		if(game.energy >= energyKonsum) {schiessen_ausrichten();}	
-		for(Schuss s: schuesse) {s.SchussMache();}
-		for(Schuss o: loeschSchuesse) {schuesse.remove(o);}
+		for(shoot s: schuesse) {s.SchussMache();}
+		for(shoot o: loeschSchuesse) {schuesse.remove(o);}
 		showTower();
 	}
 	
-	class Schuss{
+	class shoot{
 		Main main;
 		Gegner geg;
 		int i;
@@ -126,7 +126,7 @@ public class SchussTower extends Tower {
 		PVector schussPos = new PVector(0,0);
 		PVector schussRichtung = new PVector(0,0);
 		
-		public Schuss(Main ma, Gegner g, PVector startPos, PVector zielPos, double fZ) {
+		public shoot(Main ma, Gegner g, PVector startPos, PVector zielPos, double fZ) {
 			main = ma;
 			geg = g;
 			i = 0;
@@ -165,7 +165,7 @@ public class SchussTower extends Tower {
 			}
 		}
 		
-		void schuss(){
+		void shoot(){
 			schussPos.x += schussRichtung.x * schussSpeed;
 			schussPos.y += schussRichtung.y * schussSpeed;	
 		}
@@ -182,7 +182,7 @@ public class SchussTower extends Tower {
 		
 		void SchussMache() {
 			treffen();
-			schuss();
+			shoot();
 			schussMalen();
 			
 		}

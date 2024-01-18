@@ -24,13 +24,13 @@ public class LaserTower extends Tower {
 		gun = settings.gun;
 	}
 	
-	void schuss(float zielX,float zielY, float startX, float startY){
+	void shoot(float targetX,float targetY, float startX, float startY){
 		main.strokeWeight(6);
 		main.stroke(200, 0, 100, 80);
-		main.line(startX, startY, zielX, zielY);
+		main.line(startX, startY, targetX, targetY);
 		main.strokeWeight(1);
 		main.stroke(0, 178, 255);
-		main.line(startX, startY, zielX, zielY);
+		main.line(startX, startY, targetX, targetY);
 	}
 	
 	void zielen_ausrichten() {
@@ -41,7 +41,7 @@ public class LaserTower extends Tower {
 				double alpha = (double) (Math.acos(-(g.position.y-(position.y+40))/dist));
 					
 				main.stroke(126);
-				this.schuss(position.x + 40, position.y + 40, g.position.x, g.position.y);
+				this.shoot(position.x + 40, position.y + 40, g.position.x, g.position.y);
 				game.energy -= energyKonsum;
 				g.health = g.health - schaden;
 				if(g.position.x >= (position.x+40)) {ausrichtung = (float) alpha;}
@@ -69,7 +69,7 @@ public class LaserTower extends Tower {
 		}
 	}
 	
-	public void machDeinDing() {
+	public void affiche() {
 		if(game.energy >= energyKonsum) {zielen_ausrichten();}
 		showTower();
 		//main.color(255, 204, 0);

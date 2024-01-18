@@ -80,7 +80,7 @@ public class Builder {
 		}
 	}
 	
-	public void machDeinDing(){
+	public void affiche(){
 		showTower();
 		defTower();
 		//if(game.menu.building){showTower();}

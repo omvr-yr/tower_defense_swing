@@ -35,7 +35,7 @@ public class Building {
 		main.rect(position.x, position.y, largeur, hauteur);
 	}
 
-	public void machDeinDing() {
+	public void affiche() {
 		showTower();
 	}
 

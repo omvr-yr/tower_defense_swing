@@ -13,7 +13,7 @@ public class TourConfig extends SidePanel{
 		preis = setting.preis;
 	}
 
-	public void machDeinDing(int o){
+	public void affiche(int o){
 		positionieren(o);
 		showTower_Icons_info(preis, name);
 		bauen(name, preis);

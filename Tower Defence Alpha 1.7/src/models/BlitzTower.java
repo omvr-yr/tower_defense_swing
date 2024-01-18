@@ -31,11 +31,11 @@ public class BlitzTower extends Tower {
 		rotSpeed = settings.rotSpeed;
 	}
 	
-	void schuss(float zielX,float zielY, float startX, float startY){			
+	void shoot(float targetX,float targetY, float startX, float startY){			
 		boolean malen = true;
 		int ende = 17;
 		int blitzLaenge = 17;
-		PVector ziel = new PVector(zielX,zielY);
+		PVector ziel = new PVector(targetX,targetY);
 		PVector pos = new PVector(startX,startY);
 		double posAltx = startX;
 		double posAlty = startY;
@@ -46,13 +46,13 @@ public class BlitzTower extends Tower {
 				/*System.out.println("posAlt_anfang"); 
 				System.out.println(posAlt);*/
 				//pos berechnen
-				//PVector richtung = new PVector((zielX - pos.x), (zielY - pos.y));
-				//PVector richtungRandom = new PVector( (float)((zielX - pos.x)/dist(pos, ziel) * Math.random() * blitzLaenge) ,(float) ((zielY - pos.y)/dist(pos, ziel) * Math.random() * blitzLaenge));
+				//PVector richtung = new PVector((targetX - pos.x), (targetY - pos.y));
+				//PVector richtungRandom = new PVector( (float)((targetX - pos.x)/dist(pos, ziel) * Math.random() * blitzLaenge) ,(float) ((targetY - pos.y)/dist(pos, ziel) * Math.random() * blitzLaenge));
 				//System.out.println("posAlt"); 
 				//System.out.println(posAltx);
 				//System.out.println(posAlty);
-				pos.x = (float) (pos.x + ((zielX - pos.x)/dist(pos, ziel) * Math.random() * blitzLaenge)) ;
-				pos.y = (float) (pos.y + ((zielY - pos.y)/dist(pos, ziel) * Math.random() * blitzLaenge)) ;
+				pos.x = (float) (pos.x + ((targetX - pos.x)/dist(pos, ziel) * Math.random() * blitzLaenge)) ;
+				pos.y = (float) (pos.y + ((targetY - pos.y)/dist(pos, ziel) * Math.random() * blitzLaenge)) ;
 				
 				//System.out.println(posAltx);
 				//System.out.println(posAlty);
@@ -68,7 +68,7 @@ public class BlitzTower extends Tower {
 				//Ende
 				if(dist(pos, ziel) < ende){
 					malen = false;
-					main.line(zielX,zielY,pos.x, pos.y);
+					main.line(targetX,targetY,pos.x, pos.y);
 				}
 				posAltx = pos.x;
 				posAlty = pos.y;
@@ -85,7 +85,7 @@ public class BlitzTower extends Tower {
 				//main.stroke(126);
 				g.speed = g.speed * slowFactor;
 				g.health = g.health - schaden;
-				schuss(g.position.x, g.position.y, position.x + 40, position.y + 40);
+				shoot(g.position.x, g.position.y, position.x + 40, position.y + 40);
 				game.energy -= energyKonsum;	
 				i++;
 			}
@@ -120,7 +120,7 @@ public class BlitzTower extends Tower {
 		}
 	}
 	
-	public void machDeinDing() {
+	public void affiche() {
 		showTower();
 		if(game.energy >= energyKonsum) {zielen();}
 		covershowTower();

@@ -150,5 +150,5 @@ public class Gegner {
 	}
 	
 	
-	public void machDeinDing() { }
+	public void affiche() { }
 }

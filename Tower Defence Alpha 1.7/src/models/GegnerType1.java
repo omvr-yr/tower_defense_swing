@@ -18,7 +18,7 @@ public class GegnerType1 extends Gegner {
 		bild = setting.bild;
 	}	
 	
-	public void machDeinDing() {
+	public void affiche() {
 		durchkommen();
 		sterben();
 		bewegen();

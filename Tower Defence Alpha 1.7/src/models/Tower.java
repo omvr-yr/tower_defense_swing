@@ -71,14 +71,14 @@ public class Tower {
 	boolean pos(float z){return z>0;}
 	boolean neg(float z){return z<0;}
 	
-	void schuss(float zielX,float zielY, float startX, float startY){
+	void shoot(float targetX,float targetY, float startX, float startY){
 		main.strokeCap(1);
 		main.strokeWeight(6);
 		main.stroke(200, 0, 100, 80);
-		main.line(startX, startY, zielX, zielY);
+		main.line(startX, startY, targetX, targetY);
 		main.strokeWeight(1);
 		main.stroke(0, 178, 255);
-		main.line(startX, startY, zielX, zielY);
+		main.line(startX, startY, targetX, targetY);
 	}
 	
 	void zielen_ausrichten() {
@@ -88,7 +88,7 @@ public class Tower {
 					double dist = dist(positionGun, g.position);
 					double alpha = (double) (Math.acos(-(g.position.y-(position.y+40))/dist));
 					main.stroke(126);
-					schuss(position.x + 40, position.y + 40, g.position.x, g.position.y);
+					shoot(position.x + 40, position.y + 40, g.position.x, g.position.y);
 					game.energy -= (energyKonsum);
 					g.health = g.health - schaden;
 					if(g.position.x >= (position.x+40)) {ausrichtung = (float) alpha;}
@@ -147,7 +147,7 @@ public class Tower {
 		}
 	}
 
-	public void machDeinDing() {
+	public void affiche() {
 		
 	}
 

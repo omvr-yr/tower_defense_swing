@@ -293,7 +293,7 @@ public class Game {
 				System.out.println("You Win!");
 			}
 		} else {
-			actuellewave.machDeinDing();
+			actuellewave.affiche();
 		}
 	}
 	
@@ -327,9 +327,9 @@ public class Game {
 		main.background(0);
 		main.translate(100, 0);
 		map.drawMap();
-		for (Building b : buildings) {b.machDeinDing();}
-		for (Gegner g : ennemis) {g.machDeinDing();}
-		for (Tower t : towers) {t.machDeinDing();}
+		for (Building b : buildings) {b.affiche();}
+		for (Gegner g : ennemis) {g.affiche();}
+		for (Tower t : towers) {t.affiche();}
 		map.drawDetails();
 		waveManager();
 		menu.machMenue();

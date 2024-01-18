@@ -247,10 +247,10 @@ public class Menue {
 
 	public void machMenue() {
 		hintergrundAnzeigen();
-		infoLeiste.machDeinDing();	
-		SidePanel.machDeinDing(tap);
+		infoLeiste.affiche();	
+		SidePanel.affiche(tap);
 		if(flaechen_zeigen) {surface();}
-		if(building) {bauHelp.machDeinDing();}
+		if(building) {bauHelp.affiche();}
 		lebensAnzeige();
 		energyAnzeige();
 //		increase_energyAnzeige();

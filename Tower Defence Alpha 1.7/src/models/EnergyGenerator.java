@@ -25,7 +25,7 @@ public class EnergyGenerator extends Building {
 		main.fill(250);
 	}
 	
-	public void machDeinDing() {
+	public void affiche() {
 		if(game.energy<game.maxEnergy) {game.energy += energyProduce;}
 		showTower();
 	}

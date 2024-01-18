@@ -19,7 +19,7 @@ public class GegnerType2 extends Gegner {
 
 	}
 	
-	public void machDeinDing() {
+	public void affiche() {
 		durchkommen();
 		sterben();
 		bewegen();
