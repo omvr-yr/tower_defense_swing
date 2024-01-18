@@ -18,7 +18,7 @@ public class EnergyGenerator extends Building {
 		bild = setting.icon;
 	}
 	
-	void darstellen() {
+	void showTower() {
 		bild = main.loadImage("Generator.png");
 		main.image(bild,position.x,position.y);
 		main.fill(50,50,250);
@@ -27,7 +27,7 @@ public class EnergyGenerator extends Building {
 	
 	public void machDeinDing() {
 		if(game.energy<game.maxEnergy) {game.energy += energyProduce;}
-		darstellen();
+		showTower();
 	}
 	
 }

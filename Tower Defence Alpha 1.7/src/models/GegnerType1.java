@@ -22,7 +22,7 @@ public class GegnerType1 extends Gegner {
 		durchkommen();
 		sterben();
 		bewegen();
-		darstellen();
+		showTower();
 		lebensleiste();	
 		speedReset();
 	}		

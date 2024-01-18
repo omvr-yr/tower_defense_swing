@@ -51,7 +51,7 @@ public class LaserTower extends Tower {
 		}
 	}
 	
-	void darstellen() {
+	void showTower() {
 		main.image(base, position.x, position.y);
 		main.translate((position.x + (gun.height/2)) , (position.y + (gun.height/2)));
 		main.rotate(ausrichtung);
@@ -71,7 +71,7 @@ public class LaserTower extends Tower {
 	
 	public void machDeinDing() {
 		if(game.energy >= energyKonsum) {zielen_ausrichten();}
-		darstellen();
+		showTower();
 		//main.color(255, 204, 0);
 	}
 	

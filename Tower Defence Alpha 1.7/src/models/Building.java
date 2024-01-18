@@ -30,13 +30,13 @@ public class Building {
 	}
 	
 
-	void darstellen() {
+	void showTower() {
 		main.fill(250,150,150);
 		main.rect(position.x, position.y, largeur, hauteur);
 	}
 
 	public void machDeinDing() {
-		darstellen();
+		showTower();
 	}
 
 

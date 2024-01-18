@@ -15,7 +15,7 @@ public class TourConfig extends SidePanel{
 
 	public void machDeinDing(int o){
 		positionieren(o);
-		darstellen_Icons_info(preis, name);
+		showTower_Icons_info(preis, name);
 		bauen(name, preis);
 	}
 	

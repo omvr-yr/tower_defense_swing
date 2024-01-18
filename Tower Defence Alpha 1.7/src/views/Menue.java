@@ -1,7 +1,7 @@
 package views;
 import java.awt.Point;
 
-import models.BauHilfe;
+import models.Builder;
 import models.Building;
 import models.Gegner;
 import models.Settings;
@@ -15,7 +15,7 @@ public class Menue {
 	Settings settings;
 	Wave waves;
 	SidePanel SidePanel;
-	BauHilfe bauHelp;
+	Builder bauHelp;
 	InfoLeiste infoLeiste;
 	
 	public int tap;
@@ -53,7 +53,7 @@ public class Menue {
 			
 			if(main.mouseButton == PConstants.LEFT) {
 				//if(BuildingType > 0 || activeBuilding > 0){
-						game.neuerTower(BuildingType, main.mouseX-100, main.mouseY);
+						game.newTower(BuildingType, main.mouseX-100, main.mouseY);
 					//}					
 				}
 				else {mouseOverButton();mouseOverBuilding();}

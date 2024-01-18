@@ -99,7 +99,7 @@ public class BlitzTower extends Tower {
 	void drehen(){
 		ausrichtung += rotSpeed;
 	}
-	void darstellen() {
+	void showTower() {
 		main.image(base, position.x, position.y);
 		main.translate((position.x + (gun.height/2)) , (position.y + (gun.height/2)));
 		main.rotate(ausrichtung);
@@ -107,7 +107,7 @@ public class BlitzTower extends Tower {
 		main.rotate((float)-ausrichtung);
 		main.translate( -(position.x + (gun.height/2)), -(position.y + (gun.height/2)));
 	}
-	void coverDarstellen() {
+	void covershowTower() {
 		main.image(cover, position.x, position.y);
 	}
 	
@@ -121,9 +121,9 @@ public class BlitzTower extends Tower {
 	}
 	
 	public void machDeinDing() {
-		darstellen();
+		showTower();
 		if(game.energy >= energyKonsum) {zielen();}
-		coverDarstellen();
+		covershowTower();
 		drehen();
 		//main.color(255, 204, 0);
 		}

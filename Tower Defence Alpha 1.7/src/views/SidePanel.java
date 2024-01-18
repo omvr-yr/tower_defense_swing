@@ -2,7 +2,7 @@ package views;
 
 import java.util.ArrayList;
 
-import models.BauHilfe;
+import models.Builder;
 import models.Settings;
 import processing.core.PImage;
 
@@ -55,7 +55,7 @@ public class SidePanel {
 		if(main.steuerung.clickOn("links", 0, position, 100, 100) && !locked(preis)){
 			main.fill(30,180,250);
 			main.rect(-100 , position, 100, 100);
-			menu.bauHelp = new BauHilfe(main,namedeszubauenden, menu);
+			menu.bauHelp = new Builder(main,namedeszubauenden, menu);
 			menu.building = true;
 		}
 			//System.out.println("bauen wird ausgef�rt");
@@ -72,7 +72,7 @@ public class SidePanel {
 		if(main.steuerung.wheel("runter")) {offset -= spied;}
 	}
 
-	void darstellen(int tap) {
+	void showTower(int tap) {
 		for(int i=0; i < tapSize; i++) {
 			main.fill(100,100,200,50);
 			main.strokeWeight(2);
@@ -102,7 +102,7 @@ public class SidePanel {
 		
 	}
 	
-	void darstellen_Icons_info(int preis, String name) {
+	void showTower_Icons_info(int preis, String name) {
 		if(locked(preis)) {main.tint(255, 100);}
 		main.image(icon, -100,  position);
 		main.noTint();
@@ -121,7 +121,7 @@ public class SidePanel {
 	 public void machDeinDing(int tap) {
 		 scrollen();
 		 offsetMax_Min(tap);
-		 darstellen(tap);
+		 showTower(tap);
 		 if(tap == 1){for(TourConfig e : tap1) {e.machDeinDing(offset);}}
 		 if(tap == 2){for(BuildingEintrag e : tap2) {e.machDeinDing(offset);}}
 	 }

@@ -5,7 +5,7 @@ import views.Main;
 import views.Menue;
 import views.Game;
 
-public class BauHilfe {
+public class Builder {
 	Main main;
 	Game game;
 	Menue menu;
@@ -22,7 +22,7 @@ public class BauHilfe {
 	int range = 0;
 	
 	
-	public BauHilfe(Main ma,String setName, Menue me) {
+	public Builder(Main ma,String setName, Menue me) {
 		main = ma;
 		menu = me;
 		settings = main.settings(setName);
@@ -38,7 +38,7 @@ public class BauHilfe {
 		image3 = settings.cover; //main.settings.BT_cover;
 	}
 	
-	public void darstellen() {
+	public void showTower() {
 		int red = 0;
 		int green = 0;
 		
@@ -68,12 +68,12 @@ public class BauHilfe {
 		main.noTint();
 	}
 	
-	void towerSetzen(){
+	void defTower(){
 		System.out.println(main.steuerung.released);
 		if(main.steuerung.released){
 			//System.out.println(HBbreite);
 			if(game.bedeckt(main.mouseX - 100 - HBbreite , main.mouseY - HBhoehe, main.mouseX - 100 + HBbreite, main.mouseY + HBhoehe) == false){
-				 game.neuerTower(name);
+				 game.newTower(name);
 				 menu.building = false;
 				 main.mouseButton = 0;
 			}
@@ -81,9 +81,9 @@ public class BauHilfe {
 	}
 	
 	public void machDeinDing(){
-		darstellen();
-		towerSetzen();
-		//if(game.menu.building){darstellen();}
+		showTower();
+		defTower();
+		//if(game.menu.building){showTower();}
 	}
 
 }

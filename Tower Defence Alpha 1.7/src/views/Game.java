@@ -92,7 +92,7 @@ public class Game {
 		pauseMenue = new PauseMenue(main);
 	}
 	
-	public void neuerTower(String name){		
+	public void newTower(String name){		
 		boolean bu = false;
 		boolean to = false;
 		Tower t = new Tower(main);

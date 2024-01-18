@@ -135,7 +135,7 @@ public class Gegner {
 			if(ausrichtung >= 270){ausrichtung = ausrichtung + drehGesch;}
 		}
 	}
-	void darstellen() {		
+	void showTower() {		
 		drehen();
 		main.translate((int)position.x , (int)position.y);
 		main.rotate(ausrichtung*PConstants.TWO_PI/360);

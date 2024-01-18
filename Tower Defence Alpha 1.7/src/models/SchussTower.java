@@ -90,7 +90,7 @@ public class SchussTower extends Tower {
 		return ziel;
 	}
 		
-	void darstellen() {
+	void showTower() {
 		main.image(base, position.x, position.y);
 		main.translate((position.x + (gun.height/2)) , (position.y + (gun.height/2)));
 		main.rotate(ausrichtung);
@@ -112,7 +112,7 @@ public class SchussTower extends Tower {
 		if(game.energy >= energyKonsum) {schiessen_ausrichten();}	
 		for(Schuss s: schuesse) {s.SchussMache();}
 		for(Schuss o: loeschSchuesse) {schuesse.remove(o);}
-		darstellen();
+		showTower();
 	}
 	
 	class Schuss{
